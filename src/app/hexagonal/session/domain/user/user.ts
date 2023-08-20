@@ -4,9 +4,9 @@ import { UserFullName } from './user-full-name';
 import { UserLastName } from './user-last-name';
 
 export class User {
-  public fullName!: UserFullName;
+  public fullName: UserFullName;
 
-  constructor(
+  public constructor(
     public readonly email: UserEmail,
     public readonly firstName: UserFirstName,
     public readonly lastName: UserLastName

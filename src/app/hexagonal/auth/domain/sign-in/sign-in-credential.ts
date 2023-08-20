@@ -1,9 +1,9 @@
 import { CredentialEmail } from '../credential-email';
 import { CredentialPassword } from '../credential-password';
 
-export class Credential {
+export class SignInCredential {
   public constructor(
-    public readonly credentialsEmail: CredentialEmail,
-    public readonly credentialsPassword: CredentialPassword
+    public readonly email: CredentialEmail,
+    public readonly password: CredentialPassword
   ) {}
 }

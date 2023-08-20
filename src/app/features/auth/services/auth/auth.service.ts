@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { SignUpCredentials } from '../../types/sign-up-credentials.interface';
-import { SignInCredentials } from '../../types/sign-in-credentials.interface';
+import { SignInCredential } from 'src/app/hexagonal/auth/domain/sign-in/sign-in-credential';
+import { SignUpCredential } from 'src/app/hexagonal/auth/domain/sign-up/sign-up-credential';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  public signIn(signInCredentials: SignInCredentials): void {
-    console.log(signInCredentials);
+  public signIn(signInCredential: SignInCredential): void {
+    console.log(signInCredential);
   }
 
-  public signUp(signUpCredentials: SignUpCredentials): void {
-    console.log(signUpCredentials);
+  public signUp(signUpCredential: SignUpCredential): void {
+    console.log(signUpCredential);
   }
 }

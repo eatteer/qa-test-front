@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SignUpRoutingModule } from './sign-up-routing.module';
 import { SignUpComponent } from './sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PasswordModule } from 'src/app/shared/components/password/password.module';
+import { PasswordModule } from 'src/app/features/shared/components/password/password.module';
 
 @NgModule({
   declarations: [SignUpComponent],

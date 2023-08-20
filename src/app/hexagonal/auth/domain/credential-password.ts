@@ -1,3 +1,13 @@
+import { validatePassword } from './validate-password';
+
 export class CredentialPassword {
-  constructor(public readonly value: string) {}
+  public constructor(public readonly value: string) {
+    if (!CredentialPassword.isValid(value)) {
+      throw new Error('Invalid password');
+    }
+  }
+
+  public static isValid(password: string): boolean {
+    return validatePassword(password);
+  }
 }

@@ -3,15 +3,17 @@ import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 // Types
-import { SignUpCredentials } from '../../types/sign-up-credentials.interface';
 import { SignUpForm } from '../../types/sign-up-form.type';
 
 // Validators
-import { ValidatePassword } from 'src/app/shared/components/password/validators/password/password.validator';
-import { ValidateValuesMatch } from 'src/app/core/validators/values-match/values-match.validator';
+import { ValidatePassword } from 'src/app/features/shared/components/password/validators/password/password.validator';
+import { ValidateValuesMatch } from 'src/app/features/shared/validators/values-match/values-match.validator';
 
 // Services
 import { AuthService } from '../../services/auth/auth.service';
+import { SignUpCredential } from 'src/app/hexagonal/auth/domain/sign-up/sign-up-credential';
+import { CredentialEmail } from 'src/app/hexagonal/auth/domain/credential-email';
+import { CredentialPassword } from 'src/app/hexagonal/auth/domain/credential-password';
 
 @Component({
   selector: 'app-sign-up',
@@ -47,13 +49,20 @@ export class SignUpComponent implements OnInit {
   }
 
   public signUp(): void {
-    const signUpCredentials = this.signUpForm.value as SignUpCredentials;
-    this.authService.signUp(signUpCredentials);
+    const { email, password, confirmPassword } = this.signUpForm.getRawValue();
+
+    const signUpCredential = new SignUpCredential(
+      new CredentialEmail(email),
+      new CredentialPassword(password),
+      new CredentialPassword(confirmPassword)
+    );
+
+    this.authService.signUp(signUpCredential);
     this.router.navigate(['/auth/sign-in']);
   }
 
-  public get doesPasswordDoNotMatch(): boolean {
-    return (this.signUpForm.hasError('valuesMatch') &&
+  public get arePasswordMatching(): boolean {
+    return (!this.signUpForm.hasError('valuesMatch') &&
       this.signUpForm.get('password')?.dirty &&
       this.signUpForm.get('confirmPassword')?.dirty)!;
   }

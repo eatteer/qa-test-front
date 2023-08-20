@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PanelRootRoutingModule } from './panel-root-routing.module';
 import { PanelRootComponent } from './panel-root.component';
-import { NavbarModule } from 'src/app/shared/components/navbar/navbar.module';
+import { NavbarModule } from 'src/app/features/shared/components/navbar/navbar.module';
 
 @NgModule({
   declarations: [PanelRootComponent],

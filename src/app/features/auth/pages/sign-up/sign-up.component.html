@@ -51,7 +51,7 @@
           formControlName="confirmPassword"
           class="mb-4"
         >
-          <label errors *ngIf="doesPasswordDoNotMatch" class="label">
+          <label errors *ngIf="arePasswordMatching" class="label">
             <span class="label-text-alt text-error">
               Passwords do not match
             </span>

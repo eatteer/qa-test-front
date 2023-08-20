@@ -1,0 +1,33 @@
+<div class="navbar max-w-6xl mx-auto">
+  <div class="flex-1">
+    <a routerLink="/panel" class="text-xl font-bold text-primary">
+      <i class="fa-regular fa-circle"></i>
+      Lorem
+    </a>
+  </div>
+  <div class="flex-none">
+    <div class="dropdown dropdown-end">
+      <div class="flex gap-4 items-center">
+        <h2 class="font-bold">{{ sessionService.user?.fullName }}</h2>
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img src="/assets/rengoku.webp" alt="Rengoku" />
+          </div>
+        </label>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+      >
+        <li>
+          <a class="justify-between">
+            Profile
+            <span class="badge">New</span>
+          </a>
+        </li>
+        <li><a>Settings</a></li>
+        <li><a>Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

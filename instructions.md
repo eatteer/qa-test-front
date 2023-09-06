@@ -7,7 +7,7 @@
 y el apellido
 3. El correo debe cumplir con el estandar de una dirección y no puede estar repetido
 en la base de datos
-4. La contraseña debe tener mínimo ocho carácteres (No se especifica longitud máxima)
+4. La contraseña debe tener mínimo ocho carácteres y máximo doce
 5. Debe tener mínimo una mayúscula
 6. Debe tener mínimo una minúscula
 7. Debe tener mínimo un número
@@ -28,8 +28,7 @@ establecidas. Al realizar pruebas en el formulario de registro de usuario, se ha
 que la funcionalidad de validación de contraseña no está cumpliento con las reglas del negocio
 establecidas:
 
-1. Al ingresar una contraseña con menos de ocho carácteres, el sistema no muestra un mensaje de
-error indicando que la contraseña debe tener un mínimo de ocho carácteres
+1. Al ingresar una contraseña con menos de ocho carácteres, el sistema no muestra un mensaje de error indicando que la contraseña debe tener un mínimo de ocho carácteres
 2. Se ha verificado que el sistema permite registrar una contraseña sin cumplir con los requisitos
 mínimos de tener al menos una letra mayúscula, una letra mínuscula, un número y un carácter especial.
 No se muestra un mensaje de error correspondiente al no cumplir con estas reglas
@@ -45,7 +44,11 @@ sido registrado previamente por otro usuario
 
 ### Resumen
 
-1. Permitir menos de ocho carácteres y no mostrar un mensaje de error
+1. Permitir menos de ocho carácteres, no validar carácter especial y no mostrar un mensaje de error
 2. No validar al menos un requisito para la contraseña
 3. Permitir registro con correo invalido
 4. Permitir registro con correo duplicado
+
+### Notas de desarrollador
+
+1. Validar máximo 13 carácteres en contraseñas

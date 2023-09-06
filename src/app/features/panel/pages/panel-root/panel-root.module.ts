@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { PanelRootRoutingModule } from './panel-root-routing.module';
+// Components
 import { PanelRootComponent } from './panel-root.component';
-import { NavbarModule } from 'src/app/features/shared/components/navbar/navbar.module';
+
+// Modules
+import { NavbarModule } from '@features/lib/components/navbar/navbar.module';
+import { PanelRootRoutingModule } from './panel-root-routing.module';
 
 @NgModule({
   declarations: [PanelRootComponent],

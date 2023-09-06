@@ -1,0 +1,59 @@
+<h1 class="text-4xl font-extrabold mb-4">Sign up</h1>
+<form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="flex flex-col mb-4">
+  <div class="form-control w-full">
+    <label for="full-name" class="label">
+      <span class="label-text">Full name</span>
+    </label>
+    <input
+      type="text"
+      id="full-name"
+      formControlName="fullName"
+      class="input input-bordered"
+    />
+  </div>
+  <div class="form-control w-full">
+    <label for="email" class="label">
+      <span class="label-text">Email</span>
+    </label>
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      class="input input-bordered"
+    />
+  </div>
+  <div class="form-control">
+    <label for="password" class="label">
+      <span class="label-text">Password</span>
+    </label>
+    <app-password
+      id="password"
+      autocomplete="password"
+      formControlName="password"
+    />
+  </div>
+  <div class="form-control">
+    <label for="confirm-password" class="label">
+      <span class="label-text">Repeat your password</span>
+    </label>
+    <app-password
+      id="confirm-password"
+      autocomplete="confirm-password"
+      label="Repeat your password"
+      formControlName="confirmPassword"
+      class="mb-4"
+    />
+    <label errors *ngIf="passwordDoNotMatch" class="label">
+      <span class="label-text-alt text-error"> Passwords do not match </span>
+    </label>
+  </div>
+  <button type="submit" [disabled]="signUpForm.invalid" class="btn btn-primary">
+    Sign up
+  </button>
+</form>
+<span class="text-center">
+  Do you have an account?
+  <a [routerLink]="SIGN_IN_ROUTE.rootPath" class="font-bold text-primary">
+    Sign in
+  </a>
+</span>

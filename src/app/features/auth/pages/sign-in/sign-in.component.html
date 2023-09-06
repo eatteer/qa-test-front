@@ -2,23 +2,7 @@
   <section
     class="col-span-1 flex justify-center items-center p-8 md:px-32 bg-base-100"
   >
-    <div class="w-full">
-      <h1 class="text-4xl font-extrabold mb-4">Sign in</h1>
-      <form class="flex flex-col mb-4">
-        <div class="form-control w-full">
-          <label class="label">
-            <span class="label-text">Email</span>
-          </label>
-          <input type="email" id="email" class="input input-bordered" />
-        </div>
-        <app-password id="password" label="Password" class="mb-4" />
-        <button type="submit" class="btn btn-primary">Sign in</button>
-      </form>
-      <span class="text-center">
-        Don't you have an account?
-        <a routerLink="/auth/sign-up" class="font-bold text-primary">Sign up</a>
-      </span>
-    </div>
+    <app-sign-in-form class="block w-full" />
   </section>
   <section
     class="col-span-1 relative hidden lg:flex h-screen bg-gradient-to-br from-primary to-cyan-500"

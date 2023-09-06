@@ -1,13 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { SignUpRoutingModule } from './sign-up-routing.module';
-import { SignUpComponent } from './sign-up.component';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PasswordModule } from 'src/app/features/shared/components/password/password.module';
+
+// Components
+import { SignUpComponent } from './sign-up.component';
+import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
+import { SummaryCardComponent } from '../../components/summary-card/summary-card.component';
+
+// Modules
+import { PasswordModule } from '@features/lib/components/password/password.module';
+import { SignUpRoutingModule } from './sign-up-routing.module';
 
 @NgModule({
-  declarations: [SignUpComponent],
+  declarations: [SignUpComponent, SignUpFormComponent, SummaryCardComponent],
   imports: [
     CommonModule,
     SignUpRoutingModule,

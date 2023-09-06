@@ -1,0 +1,5 @@
+<div class="fixed z-50 top-4 right-4 flex flex-col items-end">
+  <ng-container *ngFor="let toast of toasts">
+    <app-toast [toast]="toast"></app-toast>
+  </ng-container>
+</div>
